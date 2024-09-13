@@ -1,0 +1,16 @@
+D:\desktop\hmall\trade-service\src\main\java\com\hmall\trade\domain\po\OrderDetail.java
+D:\desktop\hmall\trade-service\src\main\java\com\hmall\trade\service\impl\OrderDetailServiceImpl.java
+D:\desktop\hmall\trade-service\src\main\java\com\hmall\trade\mapper\OrderMapper.java
+D:\desktop\hmall\trade-service\src\main\java\com\hmall\trade\domain\vo\OrderVO.java
+D:\desktop\hmall\trade-service\src\main\java\com\hmall\trade\controller\OrderController.java
+D:\desktop\hmall\trade-service\src\main\java\com\hmall\trade\service\IOrderDetailService.java
+D:\desktop\hmall\trade-service\src\main\java\com\hmall\trade\TradeApplication.java
+D:\desktop\hmall\trade-service\src\main\java\com\hmall\trade\service\impl\OrderServiceImpl.java
+D:\desktop\hmall\trade-service\src\main\java\com\hmall\trade\service\impl\OrderLogisticsServiceImpl.java
+D:\desktop\hmall\trade-service\src\main\java\com\hmall\trade\domain\dto\OrderFormDTO.java
+D:\desktop\hmall\trade-service\src\main\java\com\hmall\trade\domain\po\OrderLogistics.java
+D:\desktop\hmall\trade-service\src\main\java\com\hmall\trade\service\IOrderLogisticsService.java
+D:\desktop\hmall\trade-service\src\main\java\com\hmall\trade\domain\po\Order.java
+D:\desktop\hmall\trade-service\src\main\java\com\hmall\trade\service\IOrderService.java
+D:\desktop\hmall\trade-service\src\main\java\com\hmall\trade\mapper\OrderDetailMapper.java
+D:\desktop\hmall\trade-service\src\main\java\com\hmall\trade\mapper\OrderLogisticsMapper.java

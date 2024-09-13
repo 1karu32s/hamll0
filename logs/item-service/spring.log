@@ -1,0 +1,546 @@
+03:00:27:042 ERROR 42448 --- [nacos-grpc-client-executor-3776] c.a.n.c.remote.client.grpc.GrpcClient    : [1726069188349_192.168.150.1_62943]Request stream error, switch server,error={}
+
+com.alibaba.nacos.shaded.io.grpc.StatusRuntimeException: UNAVAILABLE: Network closed for unknown reason
+	at com.alibaba.nacos.shaded.io.grpc.Status.asRuntimeException(Status.java:533) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.stub.ClientCalls$StreamObserverToCallListenerAdapter.onClose(ClientCalls.java:442) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.PartialForwardingClientCallListener.onClose(PartialForwardingClientCallListener.java:39) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.ForwardingClientCallListener.onClose(ForwardingClientCallListener.java:23) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.ForwardingClientCallListener$SimpleForwardingClientCallListener.onClose(ForwardingClientCallListener.java:40) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.CensusStatsModule$StatsClientInterceptor$1$1.onClose(CensusStatsModule.java:700) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.PartialForwardingClientCallListener.onClose(PartialForwardingClientCallListener.java:39) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.ForwardingClientCallListener.onClose(ForwardingClientCallListener.java:23) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.ForwardingClientCallListener$SimpleForwardingClientCallListener.onClose(ForwardingClientCallListener.java:40) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.CensusTracingModule$TracingClientInterceptor$1$1.onClose(CensusTracingModule.java:399) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ClientCallImpl.closeObserver(ClientCallImpl.java:510) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ClientCallImpl.access$300(ClientCallImpl.java:66) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl.close(ClientCallImpl.java:630) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl.access$700(ClientCallImpl.java:518) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl$1StreamClosed.runInternal(ClientCallImpl.java:692) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl$1StreamClosed.runInContext(ClientCallImpl.java:681) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:123) ~[nacos-client-2.0.4.jar:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:829) ~[na:na]
+
+03:00:27:051  INFO 42448 --- [com.alibaba.nacos.client.remote.worker] com.alibaba.nacos.common.remote.client   : [f902410f-7b18-4c29-8992-4aa0058201ba] Try to reconnect to a new server, server is  not appointed, will choose a random server.
+05:59:19:670 ERROR 42448 --- [com.alibaba.nacos.client.remote.worker] c.a.n.c.remote.client.grpc.GrpcClient    : Server check fail, please check server 192.168.150.137 ,port 9848 is available , error ={}
+
+java.util.concurrent.ExecutionException: com.alibaba.nacos.shaded.io.grpc.StatusRuntimeException: UNAVAILABLE: io exception
+	at com.alibaba.nacos.shaded.com.google.common.util.concurrent.AbstractFuture.getDoneValue(AbstractFuture.java:566) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.com.google.common.util.concurrent.AbstractFuture.get(AbstractFuture.java:445) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.common.remote.client.grpc.GrpcClient.serverCheck(GrpcClient.java:148) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.common.remote.client.grpc.GrpcClient.connectToServer(GrpcClient.java:264) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.common.remote.client.RpcClient.reconnect(RpcClient.java:522) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.common.remote.client.RpcClient.lambda$start$2(RpcClient.java:370) ~[nacos-client-2.0.4.jar:na]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:829) ~[na:na]
+Caused by: com.alibaba.nacos.shaded.io.grpc.StatusRuntimeException: UNAVAILABLE: io exception
+	at com.alibaba.nacos.shaded.io.grpc.Status.asRuntimeException(Status.java:533) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.stub.ClientCalls$UnaryStreamToFuture.onClose(ClientCalls.java:490) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.PartialForwardingClientCallListener.onClose(PartialForwardingClientCallListener.java:39) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.ForwardingClientCallListener.onClose(ForwardingClientCallListener.java:23) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.ForwardingClientCallListener$SimpleForwardingClientCallListener.onClose(ForwardingClientCallListener.java:40) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.CensusStatsModule$StatsClientInterceptor$1$1.onClose(CensusStatsModule.java:700) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.PartialForwardingClientCallListener.onClose(PartialForwardingClientCallListener.java:39) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.ForwardingClientCallListener.onClose(ForwardingClientCallListener.java:23) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.ForwardingClientCallListener$SimpleForwardingClientCallListener.onClose(ForwardingClientCallListener.java:40) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.CensusTracingModule$TracingClientInterceptor$1$1.onClose(CensusTracingModule.java:399) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ClientCallImpl.closeObserver(ClientCallImpl.java:510) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ClientCallImpl.access$300(ClientCallImpl.java:66) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl.close(ClientCallImpl.java:630) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl.access$700(ClientCallImpl.java:518) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl$1StreamClosed.runInternal(ClientCallImpl.java:692) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl$1StreamClosed.runInContext(ClientCallImpl.java:681) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:123) ~[nacos-client-2.0.4.jar:na]
+	... 3 common frames omitted
+Caused by: com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection timed out: no further information: /192.168.150.137:9848
+Caused by: java.net.ConnectException: Connection timed out: no further information
+	at java.base/sun.nio.ch.SocketChannelImpl.checkConnect(Native Method) ~[na:na]
+	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:777) ~[na:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:327) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:336) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:685) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:632) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:549) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:511) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:918) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[nacos-client-2.0.4.jar:na]
+	at java.base/java.lang.Thread.run(Thread.java:829) ~[na:na]
+
+05:59:22:801 ERROR 42448 --- [com.alibaba.nacos.client.remote.worker] c.a.n.c.remote.client.grpc.GrpcClient    : Server check fail, please check server 192.168.150.137 ,port 9848 is available , error ={}
+
+java.util.concurrent.TimeoutException: Waited 3000 milliseconds (plus 7 milliseconds, 130200 nanoseconds delay) for com.alibaba.nacos.shaded.io.grpc.stub.ClientCalls$GrpcFuture@59af5401[status=PENDING, info=[GrpcFuture{clientCall={delegate={delegate=ClientCallImpl{method=MethodDescriptor{fullMethodName=Request/request, type=UNARY, idempotent=false, safe=false, sampledToLocalTracing=true, requestMarshaller=com.alibaba.nacos.shaded.io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@54b2e2ae, responseMarshaller=com.alibaba.nacos.shaded.io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@7eff1314, schemaDescriptor=com.alibaba.nacos.api.grpc.auto.RequestGrpc$RequestMethodDescriptorSupplier@f4e5591}}}}}]]
+	at com.alibaba.nacos.shaded.com.google.common.util.concurrent.AbstractFuture.get(AbstractFuture.java:508) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.common.remote.client.grpc.GrpcClient.serverCheck(GrpcClient.java:148) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.common.remote.client.grpc.GrpcClient.connectToServer(GrpcClient.java:264) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.common.remote.client.RpcClient.reconnect(RpcClient.java:522) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.common.remote.client.RpcClient.lambda$start$2(RpcClient.java:370) ~[nacos-client-2.0.4.jar:na]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:829) ~[na:na]
+
+05:59:22:802  INFO 42448 --- [com.alibaba.nacos.client.remote.worker] com.alibaba.nacos.common.remote.client   : [f902410f-7b18-4c29-8992-4aa0058201ba] Fail to connect server, after trying 1 times, last try server is {serverIp = '192.168.150.137', server main port = 8848}, error = unknown
+08:52:36:249 ERROR 42448 --- [com.alibaba.nacos.client.remote.worker] c.a.n.c.remote.client.grpc.GrpcClient    : Server check fail, please check server 192.168.150.137 ,port 9848 is available , error ={}
+
+java.util.concurrent.ExecutionException: com.alibaba.nacos.shaded.io.grpc.StatusRuntimeException: UNAVAILABLE: io exception
+	at com.alibaba.nacos.shaded.com.google.common.util.concurrent.AbstractFuture.getDoneValue(AbstractFuture.java:566) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.com.google.common.util.concurrent.AbstractFuture.get(AbstractFuture.java:445) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.common.remote.client.grpc.GrpcClient.serverCheck(GrpcClient.java:148) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.common.remote.client.grpc.GrpcClient.connectToServer(GrpcClient.java:264) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.common.remote.client.RpcClient.reconnect(RpcClient.java:522) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.common.remote.client.RpcClient.lambda$start$2(RpcClient.java:370) ~[nacos-client-2.0.4.jar:na]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:829) ~[na:na]
+Caused by: com.alibaba.nacos.shaded.io.grpc.StatusRuntimeException: UNAVAILABLE: io exception
+	at com.alibaba.nacos.shaded.io.grpc.Status.asRuntimeException(Status.java:533) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.stub.ClientCalls$UnaryStreamToFuture.onClose(ClientCalls.java:490) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.PartialForwardingClientCallListener.onClose(PartialForwardingClientCallListener.java:39) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.ForwardingClientCallListener.onClose(ForwardingClientCallListener.java:23) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.ForwardingClientCallListener$SimpleForwardingClientCallListener.onClose(ForwardingClientCallListener.java:40) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.CensusStatsModule$StatsClientInterceptor$1$1.onClose(CensusStatsModule.java:700) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.PartialForwardingClientCallListener.onClose(PartialForwardingClientCallListener.java:39) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.ForwardingClientCallListener.onClose(ForwardingClientCallListener.java:23) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.ForwardingClientCallListener$SimpleForwardingClientCallListener.onClose(ForwardingClientCallListener.java:40) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.CensusTracingModule$TracingClientInterceptor$1$1.onClose(CensusTracingModule.java:399) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ClientCallImpl.closeObserver(ClientCallImpl.java:510) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ClientCallImpl.access$300(ClientCallImpl.java:66) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl.close(ClientCallImpl.java:630) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl.access$700(ClientCallImpl.java:518) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl$1StreamClosed.runInternal(ClientCallImpl.java:692) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl$1StreamClosed.runInContext(ClientCallImpl.java:681) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:123) ~[nacos-client-2.0.4.jar:na]
+	... 3 common frames omitted
+Caused by: com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection timed out: no further information: /192.168.150.137:9848
+Caused by: java.net.ConnectException: Connection timed out: no further information
+	at java.base/sun.nio.ch.SocketChannelImpl.checkConnect(Native Method) ~[na:na]
+	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:777) ~[na:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:327) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:336) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:685) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:632) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:549) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:511) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:918) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[nacos-client-2.0.4.jar:na]
+	at java.base/java.lang.Thread.run(Thread.java:829) ~[na:na]
+
+08:52:36:249  INFO 42448 --- [com.alibaba.nacos.client.remote.worker] com.alibaba.nacos.common.remote.client   : [f902410f-7b18-4c29-8992-4aa0058201ba] Fail to connect server, after trying 2 times, last try server is {serverIp = '192.168.150.137', server main port = 8848}, error = unknown
+08:52:39:568 ERROR 42448 --- [com.alibaba.nacos.client.remote.worker] c.a.n.c.remote.client.grpc.GrpcClient    : Server check fail, please check server 192.168.150.137 ,port 9848 is available , error ={}
+
+java.util.concurrent.TimeoutException: Waited 3000 milliseconds (plus 4 milliseconds, 704300 nanoseconds delay) for com.alibaba.nacos.shaded.io.grpc.stub.ClientCalls$GrpcFuture@2ad3b979[status=PENDING, info=[GrpcFuture{clientCall={delegate={delegate=ClientCallImpl{method=MethodDescriptor{fullMethodName=Request/request, type=UNARY, idempotent=false, safe=false, sampledToLocalTracing=true, requestMarshaller=com.alibaba.nacos.shaded.io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@54b2e2ae, responseMarshaller=com.alibaba.nacos.shaded.io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@7eff1314, schemaDescriptor=com.alibaba.nacos.api.grpc.auto.RequestGrpc$RequestMethodDescriptorSupplier@f4e5591}}}}}]]
+	at com.alibaba.nacos.shaded.com.google.common.util.concurrent.AbstractFuture.get(AbstractFuture.java:508) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.common.remote.client.grpc.GrpcClient.serverCheck(GrpcClient.java:148) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.common.remote.client.grpc.GrpcClient.connectToServer(GrpcClient.java:264) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.common.remote.client.RpcClient.reconnect(RpcClient.java:522) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.common.remote.client.RpcClient.lambda$start$2(RpcClient.java:370) ~[nacos-client-2.0.4.jar:na]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:829) ~[na:na]
+
+08:52:39:569  INFO 42448 --- [com.alibaba.nacos.client.remote.worker] com.alibaba.nacos.common.remote.client   : [f902410f-7b18-4c29-8992-4aa0058201ba] Fail to connect server, after trying 3 times, last try server is {serverIp = '192.168.150.137', server main port = 8848}, error = unknown
+09:11:35:408 ERROR 42448 --- [com.alibaba.nacos.client.remote.worker] c.a.n.c.remote.client.grpc.GrpcClient    : Server check fail, please check server 192.168.150.137 ,port 9848 is available , error ={}
+
+java.util.concurrent.ExecutionException: com.alibaba.nacos.shaded.io.grpc.StatusRuntimeException: UNAVAILABLE: io exception
+	at com.alibaba.nacos.shaded.com.google.common.util.concurrent.AbstractFuture.getDoneValue(AbstractFuture.java:566) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.com.google.common.util.concurrent.AbstractFuture.get(AbstractFuture.java:445) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.common.remote.client.grpc.GrpcClient.serverCheck(GrpcClient.java:148) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.common.remote.client.grpc.GrpcClient.connectToServer(GrpcClient.java:264) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.common.remote.client.RpcClient.reconnect(RpcClient.java:522) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.common.remote.client.RpcClient.lambda$start$2(RpcClient.java:370) ~[nacos-client-2.0.4.jar:na]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:829) ~[na:na]
+Caused by: com.alibaba.nacos.shaded.io.grpc.StatusRuntimeException: UNAVAILABLE: io exception
+	at com.alibaba.nacos.shaded.io.grpc.Status.asRuntimeException(Status.java:533) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.stub.ClientCalls$UnaryStreamToFuture.onClose(ClientCalls.java:490) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.PartialForwardingClientCallListener.onClose(PartialForwardingClientCallListener.java:39) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.ForwardingClientCallListener.onClose(ForwardingClientCallListener.java:23) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.ForwardingClientCallListener$SimpleForwardingClientCallListener.onClose(ForwardingClientCallListener.java:40) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.CensusStatsModule$StatsClientInterceptor$1$1.onClose(CensusStatsModule.java:700) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.PartialForwardingClientCallListener.onClose(PartialForwardingClientCallListener.java:39) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.ForwardingClientCallListener.onClose(ForwardingClientCallListener.java:23) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.ForwardingClientCallListener$SimpleForwardingClientCallListener.onClose(ForwardingClientCallListener.java:40) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.CensusTracingModule$TracingClientInterceptor$1$1.onClose(CensusTracingModule.java:399) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ClientCallImpl.closeObserver(ClientCallImpl.java:510) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ClientCallImpl.access$300(ClientCallImpl.java:66) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl.close(ClientCallImpl.java:630) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl.access$700(ClientCallImpl.java:518) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl$1StreamClosed.runInternal(ClientCallImpl.java:692) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl$1StreamClosed.runInContext(ClientCallImpl.java:681) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:123) ~[nacos-client-2.0.4.jar:na]
+	... 3 common frames omitted
+Caused by: com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection timed out: no further information: /192.168.150.137:9848
+Caused by: java.net.ConnectException: Connection timed out: no further information
+	at java.base/sun.nio.ch.SocketChannelImpl.checkConnect(Native Method) ~[na:na]
+	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:777) ~[na:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:327) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:336) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:685) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:632) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:549) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:511) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:918) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[nacos-client-2.0.4.jar:na]
+	at java.base/java.lang.Thread.run(Thread.java:829) ~[na:na]
+
+09:11:35:408  INFO 42448 --- [com.alibaba.nacos.client.remote.worker] com.alibaba.nacos.common.remote.client   : [f902410f-7b18-4c29-8992-4aa0058201ba] Fail to connect server, after trying 4 times, last try server is {serverIp = '192.168.150.137', server main port = 8848}, error = unknown
+09:11:38:913 ERROR 42448 --- [com.alibaba.nacos.client.remote.worker] c.a.n.c.remote.client.grpc.GrpcClient    : Server check fail, please check server 192.168.150.137 ,port 9848 is available , error ={}
+
+java.util.concurrent.TimeoutException: Waited 3000 milliseconds (plus 1 milliseconds, 796800 nanoseconds delay) for com.alibaba.nacos.shaded.io.grpc.stub.ClientCalls$GrpcFuture@350fa6d3[status=PENDING, info=[GrpcFuture{clientCall={delegate={delegate=ClientCallImpl{method=MethodDescriptor{fullMethodName=Request/request, type=UNARY, idempotent=false, safe=false, sampledToLocalTracing=true, requestMarshaller=com.alibaba.nacos.shaded.io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@54b2e2ae, responseMarshaller=com.alibaba.nacos.shaded.io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@7eff1314, schemaDescriptor=com.alibaba.nacos.api.grpc.auto.RequestGrpc$RequestMethodDescriptorSupplier@f4e5591}}}}}]]
+	at com.alibaba.nacos.shaded.com.google.common.util.concurrent.AbstractFuture.get(AbstractFuture.java:508) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.common.remote.client.grpc.GrpcClient.serverCheck(GrpcClient.java:148) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.common.remote.client.grpc.GrpcClient.connectToServer(GrpcClient.java:264) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.common.remote.client.RpcClient.reconnect(RpcClient.java:522) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.common.remote.client.RpcClient.lambda$start$2(RpcClient.java:370) ~[nacos-client-2.0.4.jar:na]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:829) ~[na:na]
+
+09:11:38:914  INFO 42448 --- [com.alibaba.nacos.client.remote.worker] com.alibaba.nacos.common.remote.client   : [f902410f-7b18-4c29-8992-4aa0058201ba] Fail to connect server, after trying 5 times, last try server is {serverIp = '192.168.150.137', server main port = 8848}, error = unknown
+09:11:39:860  WARN 42448 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=8h56m20s785ms839µs400ns).
+09:11:40:479  INFO 42448 --- [com.alibaba.nacos.client.remote.worker] com.alibaba.nacos.common.remote.client   : [f902410f-7b18-4c29-8992-4aa0058201ba] Success to connect a server [192.168.150.137:8848], connectionId = 1726103500334_192.168.150.1_58520
+09:11:40:479  INFO 42448 --- [com.alibaba.nacos.client.remote.worker] com.alibaba.nacos.common.remote.client   : [f902410f-7b18-4c29-8992-4aa0058201ba] Abandon prev connection, server is 192.168.150.137:8848, connectionId is 1726069188349_192.168.150.1_62943
+09:11:40:479  INFO 42448 --- [com.alibaba.nacos.client.remote.worker] com.alibaba.nacos.common.remote.client   : Close current connection 1726069188349_192.168.150.1_62943
+09:11:40:480  INFO 42448 --- [com.alibaba.nacos.client.remote.worker] com.alibaba.nacos.common.remote.client   : [f902410f-7b18-4c29-8992-4aa0058201ba] Notify disconnected event to listeners
+09:11:40:481  INFO 42448 --- [com.alibaba.nacos.client.remote.worker] com.alibaba.nacos.common.remote.client   : [f902410f-7b18-4c29-8992-4aa0058201ba] Notify connected event to listeners.
+09:43:22:805 ERROR 42448 --- [com.alibaba.nacos.client.naming.grpc.redo.0] com.alibaba.nacos.common.remote.client   : Send request fail, request = InstanceRequest{headers={}, requestId='null'}, retryTimes = 0, errorMessage = java.util.concurrent.ExecutionException: com.alibaba.nacos.shaded.io.grpc.StatusRuntimeException: UNAVAILABLE: io exception
+09:43:22:805 ERROR 42448 --- [nacos-grpc-client-executor-3789] c.a.n.c.remote.client.grpc.GrpcClient    : [1726103500334_192.168.150.1_58520]Request stream error, switch server,error={}
+
+com.alibaba.nacos.shaded.io.grpc.StatusRuntimeException: UNAVAILABLE: io exception
+	at com.alibaba.nacos.shaded.io.grpc.Status.asRuntimeException(Status.java:533) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.stub.ClientCalls$StreamObserverToCallListenerAdapter.onClose(ClientCalls.java:442) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.PartialForwardingClientCallListener.onClose(PartialForwardingClientCallListener.java:39) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.ForwardingClientCallListener.onClose(ForwardingClientCallListener.java:23) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.ForwardingClientCallListener$SimpleForwardingClientCallListener.onClose(ForwardingClientCallListener.java:40) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.CensusStatsModule$StatsClientInterceptor$1$1.onClose(CensusStatsModule.java:700) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.PartialForwardingClientCallListener.onClose(PartialForwardingClientCallListener.java:39) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.ForwardingClientCallListener.onClose(ForwardingClientCallListener.java:23) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.ForwardingClientCallListener$SimpleForwardingClientCallListener.onClose(ForwardingClientCallListener.java:40) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.CensusTracingModule$TracingClientInterceptor$1$1.onClose(CensusTracingModule.java:399) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ClientCallImpl.closeObserver(ClientCallImpl.java:510) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ClientCallImpl.access$300(ClientCallImpl.java:66) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl.close(ClientCallImpl.java:630) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl.access$700(ClientCallImpl.java:518) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl$1StreamClosed.runInternal(ClientCallImpl.java:692) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl$1StreamClosed.runInContext(ClientCallImpl.java:681) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:123) ~[nacos-client-2.0.4.jar:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:829) ~[na:na]
+Caused by: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at java.base/sun.nio.ch.SocketDispatcher.read0(Native Method) ~[na:na]
+	at java.base/sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43) ~[na:na]
+	at java.base/sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:276) ~[na:na]
+	at java.base/sun.nio.ch.IOUtil.read(IOUtil.java:233) ~[na:na]
+	at java.base/sun.nio.ch.IOUtil.read(IOUtil.java:223) ~[na:na]
+	at java.base/sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:356) ~[na:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:247) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1140) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:347) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:148) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:697) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:632) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:549) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:511) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:918) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.shaded.io.grpc.netty.shaded.io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[nacos-client-2.0.4.jar:na]
+	... 1 common frames omitted
+
+09:43:25:816  INFO 42448 --- [com.alibaba.nacos.client.remote.worker] com.alibaba.nacos.common.remote.client   : [f902410f-7b18-4c29-8992-4aa0058201ba] Try to reconnect to a new server, server is  not appointed, will choose a random server.
+09:43:27:823 ERROR 42448 --- [com.alibaba.nacos.client.naming.updater.3] com.alibaba.nacos.common.remote.client   : Send request fail, request = ServiceQueryRequest{headers={app=unknown}, requestId='null'}, retryTimes = 0, errorMessage = Client not connected, current status:UNHEALTHY
+09:43:27:933 ERROR 42448 --- [com.alibaba.nacos.client.naming.updater.3] com.alibaba.nacos.common.remote.client   : Send request fail, request = ServiceQueryRequest{headers={app=unknown}, requestId='null'}, retryTimes = 1, errorMessage = Client not connected, current status:UNHEALTHY
+09:43:28:041 ERROR 42448 --- [com.alibaba.nacos.client.naming.updater.3] com.alibaba.nacos.common.remote.client   : Send request fail, request = ServiceQueryRequest{headers={app=unknown}, requestId='null'}, retryTimes = 2, errorMessage = Client not connected, current status:UNHEALTHY
+09:43:28:208  INFO 42448 --- [com.alibaba.nacos.client.remote.worker] com.alibaba.nacos.common.remote.client   : [f902410f-7b18-4c29-8992-4aa0058201ba] Success to connect a server [192.168.150.137:8848], connectionId = 1726105407832_192.168.150.1_58878
+09:43:28:208  INFO 42448 --- [com.alibaba.nacos.client.remote.worker] com.alibaba.nacos.common.remote.client   : [f902410f-7b18-4c29-8992-4aa0058201ba] Abandon prev connection, server is 192.168.150.137:8848, connectionId is 1726103500334_192.168.150.1_58520
+09:43:28:208  INFO 42448 --- [com.alibaba.nacos.client.remote.worker] com.alibaba.nacos.common.remote.client   : Close current connection 1726103500334_192.168.150.1_58520
+09:43:28:209  INFO 42448 --- [com.alibaba.nacos.client.remote.worker] com.alibaba.nacos.common.remote.client   : [f902410f-7b18-4c29-8992-4aa0058201ba] Notify disconnected event to listeners
+09:43:28:210  INFO 42448 --- [com.alibaba.nacos.client.remote.worker] com.alibaba.nacos.common.remote.client   : [f902410f-7b18-4c29-8992-4aa0058201ba] Notify connected event to listeners.
+09:43:29:540  INFO 42448 --- [nacos-grpc-client-executor-3798] com.alibaba.nacos.common.remote.client   : [f902410f-7b18-4c29-8992-4aa0058201ba] Receive server push request, request = NotifySubscriberRequest, requestId = 128
+09:43:29:541  INFO 42448 --- [nacos-grpc-client-executor-3798] com.alibaba.nacos.common.remote.client   : [f902410f-7b18-4c29-8992-4aa0058201ba] Ack server push request, request = NotifySubscriberRequest, requestId = 128
+09:43:51:022  WARN 42448 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=32m11s161ms19µs800ns).
+10:32:35:505  WARN 42448 --- [Thread-7] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Start destroying common HttpClient
+10:32:35:505  WARN 42448 --- [Thread-4] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Start destroying Publisher
+10:32:35:506  WARN 42448 --- [Thread-4] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Destruction of the end
+10:32:35:507  WARN 42448 --- [Thread-7] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Destruction of the end
+10:32:36:361  INFO 42448 --- [SpringApplicationShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registering from Nacos Server now...
+10:32:36:375  INFO 42448 --- [SpringApplicationShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registration finished.
+10:32:36:707  INFO 42448 --- [SpringApplicationShutdownHook] com.alibaba.nacos.common.remote.client   : Shutdown rpc client, set status to shutdown
+10:32:36:707  INFO 42448 --- [SpringApplicationShutdownHook] com.alibaba.nacos.common.remote.client   : Shutdown client event executor java.util.concurrent.ScheduledThreadPoolExecutor@47bbf270[Running, pool size = 2, active threads = 2, queued tasks = 0, completed tasks = 0]
+10:32:36:707  INFO 42448 --- [SpringApplicationShutdownHook] com.alibaba.nacos.common.remote.client   : Close current connection 1726105407832_192.168.150.1_58878
+10:32:36:707  INFO 42448 --- [SpringApplicationShutdownHook] c.a.n.c.remote.client.grpc.GrpcClient    : Shutdown grpc executor java.util.concurrent.ThreadPoolExecutor@29a4dfc[Running, pool size = 4, active threads = 0, queued tasks = 0, completed tasks = 4389]
+10:32:36:713  INFO 42448 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+10:32:36:740  INFO 42448 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+14:20:10:297  INFO 58776 --- [main] com.hmall.item.ItemApplication           : The following 1 profile is active: "local"
+14:20:10:967  INFO 58776 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=59c122bd-c7bd-3b5d-a061-a5410fe5fcb7
+14:20:11:016  INFO 58776 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'io.seata.spring.boot.autoconfigure.SeataCoreAutoConfiguration' of type [io.seata.spring.boot.autoconfigure.SeataCoreAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+14:20:11:017  INFO 58776 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'springApplicationContextProvider' of type [io.seata.spring.boot.autoconfigure.provider.SpringApplicationContextProvider] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+14:20:11:017  INFO 58776 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'io.seata.spring.boot.autoconfigure.SeataAutoConfiguration' of type [io.seata.spring.boot.autoconfigure.SeataAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+14:20:11:038  INFO 58776 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'failureHandler' of type [io.seata.tm.api.DefaultFailureHandlerImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+14:20:11:041  INFO 58776 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.commons.config.CommonsConfigAutoConfiguration' of type [org.springframework.cloud.commons.config.CommonsConfigAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+14:20:11:042  INFO 58776 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerDefaultMappingsProviderAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerDefaultMappingsProviderAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+14:20:11:042  INFO 58776 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'loadBalancerClientsDefaultsMappingsProvider' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerDefaultMappingsProviderAutoConfiguration$$Lambda$561/0x0000000800645440] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+14:20:11:043  INFO 58776 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'defaultsBindHandlerAdvisor' of type [org.springframework.cloud.commons.config.DefaultsBindHandlerAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+14:20:11:046  INFO 58776 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'springCloudAlibabaConfiguration' of type [io.seata.spring.boot.autoconfigure.properties.SpringCloudAlibabaConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+14:20:11:048  INFO 58776 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'seataProperties' of type [io.seata.spring.boot.autoconfigure.properties.SeataProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+14:20:11:052  INFO 58776 --- [main] i.s.s.b.a.SeataAutoConfiguration         : Automatically configure Seata
+14:20:11:091  INFO 58776 --- [main] io.seata.config.ConfigurationFactory     : load Configuration from :Spring Configuration
+14:20:11:096  INFO 58776 --- [main] io.seata.config.ConfigurationFactory     : load Configuration from :Spring Configuration
+14:20:11:155  INFO 58776 --- [main] i.s.s.a.GlobalTransactionScanner         : Initializing Global Transaction Clients ... 
+14:20:11:207  INFO 58776 --- [main] i.s.core.rpc.netty.NettyClientBootstrap  : NettyClientBootstrap has started
+14:20:11:393  INFO 58776 --- [main] com.alibaba.nacos.common.remote.client   : [RpcClientFactory] create a new rpc client of cc531404-ba19-4273-b139-e108ba4c6d7e
+14:20:11:393  INFO 58776 --- [main] com.alibaba.nacos.common.remote.client   : [cc531404-ba19-4273-b139-e108ba4c6d7e] RpcClient init label, labels = {module=naming, source=sdk}
+14:20:11:395  INFO 58776 --- [main] com.alibaba.nacos.common.remote.client   : [cc531404-ba19-4273-b139-e108ba4c6d7e] RpcClient init, ServerListFactory = com.alibaba.nacos.client.naming.core.ServerListManager
+14:20:11:395  INFO 58776 --- [main] com.alibaba.nacos.common.remote.client   : [cc531404-ba19-4273-b139-e108ba4c6d7e] Registry connection listener to current client:com.alibaba.nacos.client.naming.remote.gprc.redo.NamingGrpcRedoService
+14:20:11:395  INFO 58776 --- [main] com.alibaba.nacos.common.remote.client   : [cc531404-ba19-4273-b139-e108ba4c6d7e] Register server push request handler:com.alibaba.nacos.client.naming.remote.gprc.NamingPushRequestHandler
+14:20:11:395  INFO 58776 --- [main] com.alibaba.nacos.common.remote.client   : [cc531404-ba19-4273-b139-e108ba4c6d7e] Try to connect to server on start up, server: {serverIp = '192.168.150.137', server main port = 8848}
+14:20:11:513  INFO 58776 --- [main] com.alibaba.nacos.common.remote.client   : [cc531404-ba19-4273-b139-e108ba4c6d7e] Success to connect to server [192.168.150.137:8848] on start up, connectionId = 1726122010686_192.168.150.1_51496
+14:20:11:513  INFO 58776 --- [main] com.alibaba.nacos.common.remote.client   : [cc531404-ba19-4273-b139-e108ba4c6d7e] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$ConnectResetRequestHandler
+14:20:11:513  INFO 58776 --- [main] com.alibaba.nacos.common.remote.client   : [cc531404-ba19-4273-b139-e108ba4c6d7e] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$$Lambda$472/0x0000000800423c40
+14:20:11:513  INFO 58776 --- [com.alibaba.nacos.client.remote.worker] com.alibaba.nacos.common.remote.client   : [cc531404-ba19-4273-b139-e108ba4c6d7e] Notify connected event to listeners.
+14:20:11:545  INFO 58776 --- [main] i.s.c.r.netty.NettyClientChannelManager  : will connect to 192.168.150.137:8099
+14:20:12:108  INFO 58776 --- [nacos-grpc-client-executor-6] com.alibaba.nacos.common.remote.client   : [cc531404-ba19-4273-b139-e108ba4c6d7e] Receive server push request, request = NotifySubscriberRequest, requestId = 135
+14:20:12:110  INFO 58776 --- [nacos-grpc-client-executor-6] com.alibaba.nacos.common.remote.client   : [cc531404-ba19-4273-b139-e108ba4c6d7e] Ack server push request, request = NotifySubscriberRequest, requestId = 135
+14:20:12:230  INFO 58776 --- [main] i.s.core.rpc.netty.NettyPoolableFactory  : NettyPool create channel to transactionRole:TMROLE,address:192.168.150.137:8099,msg:< RegisterTMRequest{applicationId='item-service', transactionServiceGroup='hmall'} >
+14:20:13:066  INFO 58776 --- [main] i.s.c.rpc.netty.TmNettyRemotingClient    : register TM success. client version:1.5.2, server version:1.5.2,channel:[id: 0x8e48967e, L:/192.168.150.1:51501 - R:/192.168.150.137:8099]
+14:20:13:071  INFO 58776 --- [main] i.s.core.rpc.netty.NettyPoolableFactory  : register success, cost 65 ms, version:1.5.2,role:TMROLE,channel:[id: 0x8e48967e, L:/192.168.150.1:51501 - R:/192.168.150.137:8099]
+14:20:13:071  INFO 58776 --- [main] i.s.s.a.GlobalTransactionScanner         : Transaction Manager Client is initialized. applicationId[item-service] txServiceGroup[hmall]
+14:20:13:079  INFO 58776 --- [main] io.seata.rm.datasource.AsyncWorker       : Async Commit Buffer Limit: 10000
+14:20:13:080  INFO 58776 --- [main] i.s.rm.datasource.xa.ResourceManagerXA   : ResourceManagerXA init ...
+14:20:13:085  INFO 58776 --- [main] i.s.core.rpc.netty.NettyClientBootstrap  : NettyClientBootstrap has started
+14:20:13:086  INFO 58776 --- [main] i.s.s.a.GlobalTransactionScanner         : Resource Manager is initialized. applicationId[item-service] txServiceGroup[hmall]
+14:20:13:086  INFO 58776 --- [main] i.s.s.a.GlobalTransactionScanner         : Global Transaction Clients are initialized. 
+14:20:13:087  INFO 58776 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'io.seata.spring.boot.autoconfigure.SeataDataSourceAutoConfiguration' of type [io.seata.spring.boot.autoconfigure.SeataDataSourceAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+14:20:13:466  INFO 58776 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+14:20:13:478  INFO 58776 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+14:20:13:478  INFO 58776 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+14:20:13:617  INFO 58776 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+14:20:13:617  INFO 58776 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3308 ms
+14:20:13:768  INFO 58776 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+14:20:13:996  INFO 58776 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+14:20:14:050  INFO 58776 --- [main] i.s.c.r.netty.NettyClientChannelManager  : will connect to 192.168.150.137:8099
+14:20:14:051  INFO 58776 --- [main] i.s.c.rpc.netty.RmNettyRemotingClient    : RM will register :jdbc:mysql://192.168.150.137:3306/hm-item
+14:20:14:051  INFO 58776 --- [main] i.s.core.rpc.netty.NettyPoolableFactory  : NettyPool create channel to transactionRole:RMROLE,address:192.168.150.137:8099,msg:< RegisterRMRequest{resourceIds='jdbc:mysql://192.168.150.137:3306/hm-item', applicationId='item-service', transactionServiceGroup='hmall'} >
+14:20:14:070  INFO 58776 --- [main] i.s.c.rpc.netty.RmNettyRemotingClient    : register RM success. client version:1.5.2, server version:1.5.2,channel:[id: 0xc45b947a, L:/192.168.150.1:51574 - R:/192.168.150.137:8099]
+14:20:14:070  INFO 58776 --- [main] i.s.core.rpc.netty.NettyPoolableFactory  : register success, cost 16 ms, version:1.5.2,role:RMROLE,channel:[id: 0xc45b947a, L:/192.168.150.1:51574 - R:/192.168.150.137:8099]
+14:20:15:019  INFO 58776 --- [main] c.a.c.sentinel.SentinelWebMvcConfigurer  : [Sentinel Starter] register SentinelWebInterceptor with urlPatterns: [/**].
+14:20:17:036  INFO 58776 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+14:20:17:077  INFO 58776 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]
+14:20:18:879  INFO 58776 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+14:20:18:948  INFO 58776 --- [main] com.alibaba.nacos.common.remote.client   : [RpcClientFactory] create a new rpc client of 5f8e09b3-7348-4bbe-8252-d1e647050ca0
+14:20:18:948  INFO 58776 --- [main] com.alibaba.nacos.common.remote.client   : [5f8e09b3-7348-4bbe-8252-d1e647050ca0] RpcClient init label, labels = {module=naming, source=sdk}
+14:20:18:949  INFO 58776 --- [main] com.alibaba.nacos.common.remote.client   : [5f8e09b3-7348-4bbe-8252-d1e647050ca0] RpcClient init, ServerListFactory = com.alibaba.nacos.client.naming.core.ServerListManager
+14:20:18:949  INFO 58776 --- [main] com.alibaba.nacos.common.remote.client   : [5f8e09b3-7348-4bbe-8252-d1e647050ca0] Registry connection listener to current client:com.alibaba.nacos.client.naming.remote.gprc.redo.NamingGrpcRedoService
+14:20:18:949  INFO 58776 --- [main] com.alibaba.nacos.common.remote.client   : [5f8e09b3-7348-4bbe-8252-d1e647050ca0] Register server push request handler:com.alibaba.nacos.client.naming.remote.gprc.NamingPushRequestHandler
+14:20:18:949  INFO 58776 --- [main] com.alibaba.nacos.common.remote.client   : [5f8e09b3-7348-4bbe-8252-d1e647050ca0] Try to connect to server on start up, server: {serverIp = '192.168.150.137', server main port = 8848}
+14:20:19:078  INFO 58776 --- [main] com.alibaba.nacos.common.remote.client   : [5f8e09b3-7348-4bbe-8252-d1e647050ca0] Success to connect to server [192.168.150.137:8848] on start up, connectionId = 1726122018238_192.168.150.1_51600
+14:20:19:078  INFO 58776 --- [main] com.alibaba.nacos.common.remote.client   : [5f8e09b3-7348-4bbe-8252-d1e647050ca0] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$ConnectResetRequestHandler
+14:20:19:078  INFO 58776 --- [com.alibaba.nacos.client.remote.worker] com.alibaba.nacos.common.remote.client   : [5f8e09b3-7348-4bbe-8252-d1e647050ca0] Notify connected event to listeners.
+14:20:19:079  INFO 58776 --- [main] com.alibaba.nacos.common.remote.client   : [5f8e09b3-7348-4bbe-8252-d1e647050ca0] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$$Lambda$472/0x0000000800423c40
+14:20:19:101  INFO 58776 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+14:20:19:110  INFO 58776 --- [main] c.a.c.n.registry.NacosServiceRegistry    : nacos registry, DEFAULT_GROUP item-service 192.168.150.1:8081 register finished
+14:20:19:661  INFO 58776 --- [nacos-grpc-client-executor-6] com.alibaba.nacos.common.remote.client   : [5f8e09b3-7348-4bbe-8252-d1e647050ca0] Receive server push request, request = NotifySubscriberRequest, requestId = 138
+14:20:19:663  INFO 58776 --- [nacos-grpc-client-executor-6] com.alibaba.nacos.common.remote.client   : [5f8e09b3-7348-4bbe-8252-d1e647050ca0] Ack server push request, request = NotifySubscriberRequest, requestId = 138
+14:20:20:854  INFO 58776 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+14:20:20:863  INFO 58776 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Documentation plugins bootstrapped
+14:20:20:866  INFO 58776 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+14:20:20:883  INFO 58776 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+14:20:20:969  INFO 58776 --- [main] com.hmall.item.ItemApplication           : Started ItemApplication in 18.765 seconds (JVM running for 19.986)
+14:20:20:974  INFO 58776 --- [main] c.a.c.n.refresh.NacosContextRefresher    : [Nacos Config] Listening config: dataId=item-service.yaml, group=DEFAULT_GROUP
+14:20:20:974  INFO 58776 --- [main] c.a.c.n.refresh.NacosContextRefresher    : [Nacos Config] Listening config: dataId=item-service-local.yaml, group=DEFAULT_GROUP
+14:20:20:975  INFO 58776 --- [main] c.a.c.n.refresh.NacosContextRefresher    : [Nacos Config] Listening config: dataId=item-service, group=DEFAULT_GROUP
+14:20:29:490  WARN 58776 --- [Thread-5] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Start destroying Publisher
+14:20:29:490  WARN 58776 --- [Thread-1] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Start destroying common HttpClient
+14:20:29:490  WARN 58776 --- [Thread-5] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Destruction of the end
+14:20:29:491  WARN 58776 --- [Thread-1] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Destruction of the end
+14:20:30:068  INFO 58776 --- [SpringContextShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registering from Nacos Server now...
+14:20:30:080  INFO 58776 --- [SpringContextShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registration finished.
+14:20:30:401  INFO 58776 --- [SpringContextShutdownHook] com.alibaba.nacos.common.remote.client   : Shutdown rpc client, set status to shutdown
+14:20:30:401  INFO 58776 --- [SpringContextShutdownHook] com.alibaba.nacos.common.remote.client   : Shutdown client event executor java.util.concurrent.ScheduledThreadPoolExecutor@5ea3c463[Running, pool size = 2, active threads = 2, queued tasks = 0, completed tasks = 0]
+14:20:30:401  INFO 58776 --- [SpringContextShutdownHook] com.alibaba.nacos.common.remote.client   : Close current connection 1726122018238_192.168.150.1_51600
+14:20:30:405  INFO 58776 --- [nacos-grpc-client-executor-12] c.a.n.c.remote.client.grpc.GrpcClient    : [1726122018238_192.168.150.1_51600]Ignore complete event,isRunning:false,isAbandon=false
+14:20:30:407  INFO 58776 --- [SpringContextShutdownHook] c.a.n.c.remote.client.grpc.GrpcClient    : Shutdown grpc executor java.util.concurrent.ThreadPoolExecutor@79a5aa3a[Running, pool size = 5, active threads = 0, queued tasks = 0, completed tasks = 13]
+14:20:30:412  INFO 58776 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+14:20:30:432  INFO 58776 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+14:20:30:435  INFO 58776 --- [NettyClientSelector_RMROLE_1_1] i.s.c.r.n.AbstractNettyRemotingClient    : channel inactive: [id: 0xc45b947a, L:/192.168.150.1:51574 ! R:/192.168.150.137:8099]
+14:20:30:435  INFO 58776 --- [NettyClientSelector_RMROLE_1_1] i.s.c.r.netty.NettyClientChannelManager  : return to pool, rm channel:[id: 0xc45b947a, L:/192.168.150.1:51574 ! R:/192.168.150.137:8099]
+14:20:30:435  INFO 58776 --- [NettyClientSelector_RMROLE_1_1] i.s.core.rpc.netty.NettyPoolableFactory  : channel valid false,channel:[id: 0xc45b947a, L:/192.168.150.1:51574 ! R:/192.168.150.137:8099]
+14:20:30:436  INFO 58776 --- [NettyClientSelector_RMROLE_1_1] i.s.core.rpc.netty.NettyPoolableFactory  : will destroy channel:[id: 0xc45b947a, L:/192.168.150.1:51574 ! R:/192.168.150.137:8099]
+14:20:30:436  INFO 58776 --- [NettyClientSelector_RMROLE_1_1] i.s.c.r.n.AbstractNettyRemotingClient    : ChannelHandlerContext(AbstractNettyRemotingClient$ClientHandler#0, [id: 0xc45b947a, L:/192.168.150.1:51574 ! R:/192.168.150.137:8099]) will closed
+14:20:30:436  INFO 58776 --- [NettyClientSelector_RMROLE_1_1] i.s.c.r.n.AbstractNettyRemotingClient    : ChannelHandlerContext(AbstractNettyRemotingClient$ClientHandler#0, [id: 0xc45b947a, L:/192.168.150.1:51574 ! R:/192.168.150.137:8099]) will closed
+14:26:49:124  INFO 53500 --- [main] com.hmall.item.ItemApplication           : The following 1 profile is active: "local"
+14:26:49:815  INFO 53500 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=e52d3b34-951c-35b7-91a3-bfe078a71076
+14:26:49:861  INFO 53500 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'io.seata.spring.boot.autoconfigure.SeataCoreAutoConfiguration' of type [io.seata.spring.boot.autoconfigure.SeataCoreAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+14:26:49:862  INFO 53500 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'springApplicationContextProvider' of type [io.seata.spring.boot.autoconfigure.provider.SpringApplicationContextProvider] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+14:26:49:862  INFO 53500 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'io.seata.spring.boot.autoconfigure.SeataAutoConfiguration' of type [io.seata.spring.boot.autoconfigure.SeataAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+14:26:49:887  INFO 53500 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'failureHandler' of type [io.seata.tm.api.DefaultFailureHandlerImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+14:26:49:891  INFO 53500 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.commons.config.CommonsConfigAutoConfiguration' of type [org.springframework.cloud.commons.config.CommonsConfigAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+14:26:49:892  INFO 53500 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerDefaultMappingsProviderAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerDefaultMappingsProviderAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+14:26:49:892  INFO 53500 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'loadBalancerClientsDefaultsMappingsProvider' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerDefaultMappingsProviderAutoConfiguration$$Lambda$561/0x000000080063b440] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+14:26:49:893  INFO 53500 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'defaultsBindHandlerAdvisor' of type [org.springframework.cloud.commons.config.DefaultsBindHandlerAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+14:26:49:896  INFO 53500 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'springCloudAlibabaConfiguration' of type [io.seata.spring.boot.autoconfigure.properties.SpringCloudAlibabaConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+14:26:49:898  INFO 53500 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'seataProperties' of type [io.seata.spring.boot.autoconfigure.properties.SeataProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+14:26:49:899  INFO 53500 --- [main] i.s.s.b.a.SeataAutoConfiguration         : Automatically configure Seata
+14:26:49:943  INFO 53500 --- [main] io.seata.config.ConfigurationFactory     : load Configuration from :Spring Configuration
+14:26:49:948  INFO 53500 --- [main] io.seata.config.ConfigurationFactory     : load Configuration from :Spring Configuration
+14:26:49:987  INFO 53500 --- [main] i.s.s.a.GlobalTransactionScanner         : Initializing Global Transaction Clients ... 
+14:26:50:030  INFO 53500 --- [main] i.s.core.rpc.netty.NettyClientBootstrap  : NettyClientBootstrap has started
+14:26:50:209  INFO 53500 --- [main] com.alibaba.nacos.common.remote.client   : [RpcClientFactory] create a new rpc client of ca7d0f32-e589-4434-8d2b-7210ac9bd54f
+14:26:50:209  INFO 53500 --- [main] com.alibaba.nacos.common.remote.client   : [ca7d0f32-e589-4434-8d2b-7210ac9bd54f] RpcClient init label, labels = {module=naming, source=sdk}
+14:26:50:210  INFO 53500 --- [main] com.alibaba.nacos.common.remote.client   : [ca7d0f32-e589-4434-8d2b-7210ac9bd54f] RpcClient init, ServerListFactory = com.alibaba.nacos.client.naming.core.ServerListManager
+14:26:50:210  INFO 53500 --- [main] com.alibaba.nacos.common.remote.client   : [ca7d0f32-e589-4434-8d2b-7210ac9bd54f] Registry connection listener to current client:com.alibaba.nacos.client.naming.remote.gprc.redo.NamingGrpcRedoService
+14:26:50:211  INFO 53500 --- [main] com.alibaba.nacos.common.remote.client   : [ca7d0f32-e589-4434-8d2b-7210ac9bd54f] Register server push request handler:com.alibaba.nacos.client.naming.remote.gprc.NamingPushRequestHandler
+14:26:50:211  INFO 53500 --- [main] com.alibaba.nacos.common.remote.client   : [ca7d0f32-e589-4434-8d2b-7210ac9bd54f] Try to connect to server on start up, server: {serverIp = '192.168.150.137', server main port = 8848}
+14:26:50:333  INFO 53500 --- [main] com.alibaba.nacos.common.remote.client   : [ca7d0f32-e589-4434-8d2b-7210ac9bd54f] Success to connect to server [192.168.150.137:8848] on start up, connectionId = 1726122409480_192.168.150.1_52878
+14:26:50:333  INFO 53500 --- [main] com.alibaba.nacos.common.remote.client   : [ca7d0f32-e589-4434-8d2b-7210ac9bd54f] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$ConnectResetRequestHandler
+14:26:50:333  INFO 53500 --- [main] com.alibaba.nacos.common.remote.client   : [ca7d0f32-e589-4434-8d2b-7210ac9bd54f] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$$Lambda$472/0x0000000800423c40
+14:26:50:333  INFO 53500 --- [com.alibaba.nacos.client.remote.worker] com.alibaba.nacos.common.remote.client   : [ca7d0f32-e589-4434-8d2b-7210ac9bd54f] Notify connected event to listeners.
+14:26:50:362  INFO 53500 --- [main] i.s.c.r.netty.NettyClientChannelManager  : will connect to 192.168.150.137:8099
+14:26:50:871  INFO 53500 --- [nacos-grpc-client-executor-5] com.alibaba.nacos.common.remote.client   : [ca7d0f32-e589-4434-8d2b-7210ac9bd54f] Receive server push request, request = NotifySubscriberRequest, requestId = 144
+14:26:50:873  INFO 53500 --- [nacos-grpc-client-executor-5] com.alibaba.nacos.common.remote.client   : [ca7d0f32-e589-4434-8d2b-7210ac9bd54f] Ack server push request, request = NotifySubscriberRequest, requestId = 144
+14:26:50:908  INFO 53500 --- [main] i.s.core.rpc.netty.NettyPoolableFactory  : NettyPool create channel to transactionRole:TMROLE,address:192.168.150.137:8099,msg:< RegisterTMRequest{applicationId='item-service', transactionServiceGroup='hmall'} >
+14:26:51:526  INFO 53500 --- [main] i.s.c.rpc.netty.TmNettyRemotingClient    : register TM success. client version:1.5.2, server version:1.5.2,channel:[id: 0x090813c1, L:/192.168.150.1:52880 - R:/192.168.150.137:8099]
+14:26:51:529  INFO 53500 --- [main] i.s.core.rpc.netty.NettyPoolableFactory  : register success, cost 54 ms, version:1.5.2,role:TMROLE,channel:[id: 0x090813c1, L:/192.168.150.1:52880 - R:/192.168.150.137:8099]
+14:26:51:530  INFO 53500 --- [main] i.s.s.a.GlobalTransactionScanner         : Transaction Manager Client is initialized. applicationId[item-service] txServiceGroup[hmall]
+14:26:51:536  INFO 53500 --- [main] io.seata.rm.datasource.AsyncWorker       : Async Commit Buffer Limit: 10000
+14:26:51:537  INFO 53500 --- [main] i.s.rm.datasource.xa.ResourceManagerXA   : ResourceManagerXA init ...
+14:26:51:541  INFO 53500 --- [main] i.s.core.rpc.netty.NettyClientBootstrap  : NettyClientBootstrap has started
+14:26:51:541  INFO 53500 --- [main] i.s.s.a.GlobalTransactionScanner         : Resource Manager is initialized. applicationId[item-service] txServiceGroup[hmall]
+14:26:51:541  INFO 53500 --- [main] i.s.s.a.GlobalTransactionScanner         : Global Transaction Clients are initialized. 
+14:26:51:543  INFO 53500 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'io.seata.spring.boot.autoconfigure.SeataDataSourceAutoConfiguration' of type [io.seata.spring.boot.autoconfigure.SeataDataSourceAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+14:26:51:752  INFO 53500 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+14:26:51:759  INFO 53500 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+14:26:51:759  INFO 53500 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+14:26:51:874  INFO 53500 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+14:26:51:874  INFO 53500 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2737 ms
+14:26:52:014  INFO 53500 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+14:26:52:207  INFO 53500 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+14:26:52:255  INFO 53500 --- [main] i.s.c.r.netty.NettyClientChannelManager  : will connect to 192.168.150.137:8099
+14:26:52:255  INFO 53500 --- [main] i.s.c.rpc.netty.RmNettyRemotingClient    : RM will register :jdbc:mysql://192.168.150.137:3306/hm-item
+14:26:52:256  INFO 53500 --- [main] i.s.core.rpc.netty.NettyPoolableFactory  : NettyPool create channel to transactionRole:RMROLE,address:192.168.150.137:8099,msg:< RegisterRMRequest{resourceIds='jdbc:mysql://192.168.150.137:3306/hm-item', applicationId='item-service', transactionServiceGroup='hmall'} >
+14:26:52:266  INFO 53500 --- [main] i.s.c.rpc.netty.RmNettyRemotingClient    : register RM success. client version:1.5.2, server version:1.5.2,channel:[id: 0x5efb988d, L:/192.168.150.1:52888 - R:/192.168.150.137:8099]
+14:26:52:267  INFO 53500 --- [main] i.s.core.rpc.netty.NettyPoolableFactory  : register success, cost 8 ms, version:1.5.2,role:RMROLE,channel:[id: 0x5efb988d, L:/192.168.150.1:52888 - R:/192.168.150.137:8099]
+14:26:55:008  INFO 53500 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+14:26:55:037  INFO 53500 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]
+14:26:56:791  INFO 53500 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+14:26:56:870  INFO 53500 --- [main] com.alibaba.nacos.common.remote.client   : [RpcClientFactory] create a new rpc client of 8c112fa0-5c86-439f-ab82-a112a507cf3d
+14:26:56:870  INFO 53500 --- [main] com.alibaba.nacos.common.remote.client   : [8c112fa0-5c86-439f-ab82-a112a507cf3d] RpcClient init label, labels = {module=naming, source=sdk}
+14:26:56:871  INFO 53500 --- [main] com.alibaba.nacos.common.remote.client   : [8c112fa0-5c86-439f-ab82-a112a507cf3d] RpcClient init, ServerListFactory = com.alibaba.nacos.client.naming.core.ServerListManager
+14:26:56:871  INFO 53500 --- [main] com.alibaba.nacos.common.remote.client   : [8c112fa0-5c86-439f-ab82-a112a507cf3d] Registry connection listener to current client:com.alibaba.nacos.client.naming.remote.gprc.redo.NamingGrpcRedoService
+14:26:56:871  INFO 53500 --- [main] com.alibaba.nacos.common.remote.client   : [8c112fa0-5c86-439f-ab82-a112a507cf3d] Register server push request handler:com.alibaba.nacos.client.naming.remote.gprc.NamingPushRequestHandler
+14:26:56:871  INFO 53500 --- [main] com.alibaba.nacos.common.remote.client   : [8c112fa0-5c86-439f-ab82-a112a507cf3d] Try to connect to server on start up, server: {serverIp = '192.168.150.137', server main port = 8848}
+14:26:56:992  INFO 53500 --- [main] com.alibaba.nacos.common.remote.client   : [8c112fa0-5c86-439f-ab82-a112a507cf3d] Success to connect to server [192.168.150.137:8848] on start up, connectionId = 1726122416140_192.168.150.1_52921
+14:26:56:992  INFO 53500 --- [main] com.alibaba.nacos.common.remote.client   : [8c112fa0-5c86-439f-ab82-a112a507cf3d] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$ConnectResetRequestHandler
+14:26:56:992  INFO 53500 --- [main] com.alibaba.nacos.common.remote.client   : [8c112fa0-5c86-439f-ab82-a112a507cf3d] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$$Lambda$472/0x0000000800423c40
+14:26:56:992  INFO 53500 --- [com.alibaba.nacos.client.remote.worker] com.alibaba.nacos.common.remote.client   : [8c112fa0-5c86-439f-ab82-a112a507cf3d] Notify connected event to listeners.
+14:26:57:017  INFO 53500 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+14:26:57:026  INFO 53500 --- [main] c.a.c.n.registry.NacosServiceRegistry    : nacos registry, DEFAULT_GROUP item-service 192.168.150.1:8081 register finished
+14:26:57:515  INFO 53500 --- [nacos-grpc-client-executor-7] com.alibaba.nacos.common.remote.client   : [8c112fa0-5c86-439f-ab82-a112a507cf3d] Receive server push request, request = NotifySubscriberRequest, requestId = 147
+14:26:57:517  INFO 53500 --- [nacos-grpc-client-executor-7] com.alibaba.nacos.common.remote.client   : [8c112fa0-5c86-439f-ab82-a112a507cf3d] Ack server push request, request = NotifySubscriberRequest, requestId = 147
+14:26:58:691  INFO 53500 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+14:26:58:692  INFO 53500 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Documentation plugins bootstrapped
+14:26:58:695  INFO 53500 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+14:26:58:715  INFO 53500 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+14:26:58:805  INFO 53500 --- [main] com.hmall.item.ItemApplication           : Started ItemApplication in 17.121 seconds (JVM running for 18.336)
+14:26:58:810  INFO 53500 --- [main] c.a.c.n.refresh.NacosContextRefresher    : [Nacos Config] Listening config: dataId=item-service.yaml, group=DEFAULT_GROUP
+14:26:58:811  INFO 53500 --- [main] c.a.c.n.refresh.NacosContextRefresher    : [Nacos Config] Listening config: dataId=item-service-local.yaml, group=DEFAULT_GROUP
+14:26:58:811  INFO 53500 --- [main] c.a.c.n.refresh.NacosContextRefresher    : [Nacos Config] Listening config: dataId=item-service, group=DEFAULT_GROUP
+15:22:59:725  INFO 53500 --- [NettyClientSelector_RMROLE_1_1] i.s.c.r.n.AbstractNettyRemotingClient    : channel [id: 0x5efb988d, L:/192.168.150.1:52888 - R:/192.168.150.137:8099] read idle.
+15:22:59:725  INFO 53500 --- [NettyClientSelector_TMROLE_1_1] i.s.c.r.n.AbstractNettyRemotingClient    : channel [id: 0x090813c1, L:/192.168.150.1:52880 - R:/192.168.150.137:8099] read idle.
+15:22:59:728  INFO 53500 --- [NettyClientSelector_RMROLE_1_1] i.s.core.rpc.netty.NettyPoolableFactory  : will destroy channel:[id: 0x5efb988d, L:/192.168.150.1:52888 - R:/192.168.150.137:8099]
+15:22:59:728  INFO 53500 --- [NettyClientSelector_TMROLE_1_1] i.s.core.rpc.netty.NettyPoolableFactory  : will destroy channel:[id: 0x090813c1, L:/192.168.150.1:52880 - R:/192.168.150.137:8099]
+15:22:59:729  INFO 53500 --- [NettyClientSelector_TMROLE_1_1] i.s.c.r.n.AbstractNettyRemotingClient    : ChannelHandlerContext(AbstractNettyRemotingClient$ClientHandler#0, [id: 0x090813c1, L:/192.168.150.1:52880 - R:/192.168.150.137:8099]) will closed
+15:22:59:729  INFO 53500 --- [NettyClientSelector_RMROLE_1_1] i.s.c.r.n.AbstractNettyRemotingClient    : ChannelHandlerContext(AbstractNettyRemotingClient$ClientHandler#0, [id: 0x5efb988d, L:/192.168.150.1:52888 - R:/192.168.150.137:8099]) will closed
+15:22:59:734  INFO 53500 --- [NettyClientSelector_TMROLE_1_1] i.s.c.r.n.AbstractNettyRemotingClient    : ChannelHandlerContext(AbstractNettyRemotingClient$ClientHandler#0, [id: 0x090813c1, L:/192.168.150.1:52880 ! R:/192.168.150.137:8099]) will closed
+15:22:59:734  INFO 53500 --- [NettyClientSelector_RMROLE_1_1] i.s.c.r.n.AbstractNettyRemotingClient    : ChannelHandlerContext(AbstractNettyRemotingClient$ClientHandler#0, [id: 0x5efb988d, L:/192.168.150.1:52888 ! R:/192.168.150.137:8099]) will closed
+15:22:59:735  INFO 53500 --- [NettyClientSelector_TMROLE_1_1] i.s.c.r.netty.NettyClientChannelManager  : return to pool, rm channel:[id: 0x090813c1, L:/192.168.150.1:52880 ! R:/192.168.150.137:8099]
+15:22:59:735  INFO 53500 --- [NettyClientSelector_RMROLE_1_1] i.s.c.r.netty.NettyClientChannelManager  : return to pool, rm channel:[id: 0x5efb988d, L:/192.168.150.1:52888 ! R:/192.168.150.137:8099]
+15:22:59:735  INFO 53500 --- [NettyClientSelector_RMROLE_1_1] i.s.core.rpc.netty.NettyPoolableFactory  : channel valid false,channel:[id: 0x5efb988d, L:/192.168.150.1:52888 ! R:/192.168.150.137:8099]
+15:22:59:735  INFO 53500 --- [NettyClientSelector_TMROLE_1_1] i.s.core.rpc.netty.NettyPoolableFactory  : channel valid false,channel:[id: 0x090813c1, L:/192.168.150.1:52880 ! R:/192.168.150.137:8099]
+15:22:59:736  INFO 53500 --- [NettyClientSelector_TMROLE_1_1] i.s.core.rpc.netty.NettyPoolableFactory  : will destroy channel:[id: 0x090813c1, L:/192.168.150.1:52880 ! R:/192.168.150.137:8099]
+15:22:59:736  INFO 53500 --- [NettyClientSelector_RMROLE_1_1] i.s.core.rpc.netty.NettyPoolableFactory  : will destroy channel:[id: 0x5efb988d, L:/192.168.150.1:52888 ! R:/192.168.150.137:8099]
+15:22:59:736  INFO 53500 --- [NettyClientSelector_TMROLE_1_1] i.s.c.r.n.AbstractNettyRemotingClient    : ChannelHandlerContext(AbstractNettyRemotingClient$ClientHandler#0, [id: 0x090813c1, L:/192.168.150.1:52880 ! R:/192.168.150.137:8099]) will closed
+15:22:59:736  INFO 53500 --- [NettyClientSelector_RMROLE_1_1] i.s.c.r.n.AbstractNettyRemotingClient    : ChannelHandlerContext(AbstractNettyRemotingClient$ClientHandler#0, [id: 0x5efb988d, L:/192.168.150.1:52888 ! R:/192.168.150.137:8099]) will closed
+15:22:59:736  INFO 53500 --- [NettyClientSelector_TMROLE_1_1] i.s.c.r.n.AbstractNettyRemotingClient    : ChannelHandlerContext(AbstractNettyRemotingClient$ClientHandler#0, [id: 0x090813c1, L:/192.168.150.1:52880 ! R:/192.168.150.137:8099]) will closed
+15:22:59:736  INFO 53500 --- [NettyClientSelector_RMROLE_1_1] i.s.c.r.n.AbstractNettyRemotingClient    : ChannelHandlerContext(AbstractNettyRemotingClient$ClientHandler#0, [id: 0x5efb988d, L:/192.168.150.1:52888 ! R:/192.168.150.137:8099]) will closed
+15:22:59:737  INFO 53500 --- [NettyClientSelector_TMROLE_1_1] i.s.c.r.n.AbstractNettyRemotingClient    : channel inactive: [id: 0x090813c1, L:/192.168.150.1:52880 ! R:/192.168.150.137:8099]
+15:22:59:737  INFO 53500 --- [NettyClientSelector_RMROLE_1_1] i.s.c.r.n.AbstractNettyRemotingClient    : channel inactive: [id: 0x5efb988d, L:/192.168.150.1:52888 ! R:/192.168.150.137:8099]
+15:22:59:737  INFO 53500 --- [NettyClientSelector_TMROLE_1_1] i.s.core.rpc.netty.NettyPoolableFactory  : channel valid false,channel:[id: 0x090813c1, L:/192.168.150.1:52880 ! R:/192.168.150.137:8099]
+15:22:59:737  INFO 53500 --- [NettyClientSelector_RMROLE_1_1] i.s.core.rpc.netty.NettyPoolableFactory  : channel valid false,channel:[id: 0x5efb988d, L:/192.168.150.1:52888 ! R:/192.168.150.137:8099]
+15:22:59:737  INFO 53500 --- [NettyClientSelector_RMROLE_1_1] i.s.core.rpc.netty.NettyPoolableFactory  : will destroy channel:[id: 0x5efb988d, L:/192.168.150.1:52888 ! R:/192.168.150.137:8099]
+15:22:59:737  INFO 53500 --- [NettyClientSelector_TMROLE_1_1] i.s.core.rpc.netty.NettyPoolableFactory  : will destroy channel:[id: 0x090813c1, L:/192.168.150.1:52880 ! R:/192.168.150.137:8099]
+15:22:59:737  INFO 53500 --- [NettyClientSelector_RMROLE_1_1] i.s.c.r.n.AbstractNettyRemotingClient    : ChannelHandlerContext(AbstractNettyRemotingClient$ClientHandler#0, [id: 0x5efb988d, L:/192.168.150.1:52888 ! R:/192.168.150.137:8099]) will closed
+15:22:59:737  INFO 53500 --- [NettyClientSelector_TMROLE_1_1] i.s.c.r.n.AbstractNettyRemotingClient    : ChannelHandlerContext(AbstractNettyRemotingClient$ClientHandler#0, [id: 0x090813c1, L:/192.168.150.1:52880 ! R:/192.168.150.137:8099]) will closed
+15:22:59:737  INFO 53500 --- [NettyClientSelector_RMROLE_1_1] i.s.c.r.n.AbstractNettyRemotingClient    : ChannelHandlerContext(AbstractNettyRemotingClient$ClientHandler#0, [id: 0x5efb988d, L:/192.168.150.1:52888 ! R:/192.168.150.137:8099]) will closed
+15:22:59:737  INFO 53500 --- [NettyClientSelector_TMROLE_1_1] i.s.c.r.n.AbstractNettyRemotingClient    : ChannelHandlerContext(AbstractNettyRemotingClient$ClientHandler#0, [id: 0x090813c1, L:/192.168.150.1:52880 ! R:/192.168.150.137:8099]) will closed
+15:23:00:763  INFO 53500 --- [nacos-grpc-client-executor-679] com.alibaba.nacos.common.remote.client   : [ca7d0f32-e589-4434-8d2b-7210ac9bd54f] Receive server push request, request = NotifySubscriberRequest, requestId = 157
+15:23:00:764  INFO 53500 --- [nacos-grpc-client-executor-679] com.alibaba.nacos.common.remote.client   : [ca7d0f32-e589-4434-8d2b-7210ac9bd54f] Ack server push request, request = NotifySubscriberRequest, requestId = 157
+15:23:00:779  INFO 53500 --- [timeoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : will connect to 192.168.150.137:8099
+15:23:00:781  INFO 53500 --- [timeoutChecker_2_1] i.s.c.rpc.netty.RmNettyRemotingClient    : RM will register :jdbc:mysql://192.168.150.137:3306/hm-item
+15:23:00:781  INFO 53500 --- [timeoutChecker_2_1] i.s.core.rpc.netty.NettyPoolableFactory  : NettyPool create channel to transactionRole:RMROLE,address:192.168.150.137:8099,msg:< RegisterRMRequest{resourceIds='jdbc:mysql://192.168.150.137:3306/hm-item', applicationId='item-service', transactionServiceGroup='hmall'} >
+15:23:00:956  INFO 53500 --- [nacos-grpc-client-executor-688] com.alibaba.nacos.common.remote.client   : [5d76c58c-4374-4764-b149-f20be8fb4592_config-0] Receive server push request, request = ClientDetectionRequest, requestId = 154
+15:23:00:957  INFO 53500 --- [nacos-grpc-client-executor-688] com.alibaba.nacos.common.remote.client   : [5d76c58c-4374-4764-b149-f20be8fb4592_config-0] Ack server push request, request = ClientDetectionRequest, requestId = 154
+15:23:00:958  INFO 53500 --- [nacos-grpc-client-executor-680] com.alibaba.nacos.common.remote.client   : [ca7d0f32-e589-4434-8d2b-7210ac9bd54f] Receive server push request, request = ClientDetectionRequest, requestId = 164
+15:23:00:959  INFO 53500 --- [nacos-grpc-client-executor-680] com.alibaba.nacos.common.remote.client   : [ca7d0f32-e589-4434-8d2b-7210ac9bd54f] Ack server push request, request = ClientDetectionRequest, requestId = 164
+15:23:00:997  INFO 53500 --- [timeoutChecker_2_1] i.s.c.rpc.netty.RmNettyRemotingClient    : register RM success. client version:1.5.2, server version:1.5.2,channel:[id: 0xe705a02d, L:/192.168.150.1:57643 - R:/192.168.150.137:8099]
+15:23:00:997  INFO 53500 --- [timeoutChecker_2_1] i.s.core.rpc.netty.NettyPoolableFactory  : register success, cost 205 ms, version:1.5.2,role:RMROLE,channel:[id: 0xe705a02d, L:/192.168.150.1:57643 - R:/192.168.150.137:8099]
+15:23:02:273  INFO 53500 --- [timeoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : will connect to 192.168.150.137:8099
+15:23:02:273  INFO 53500 --- [timeoutChecker_1_1] i.s.core.rpc.netty.NettyPoolableFactory  : NettyPool create channel to transactionRole:TMROLE,address:192.168.150.137:8099,msg:< RegisterTMRequest{applicationId='item-service', transactionServiceGroup='hmall'} >
+15:23:02:306  INFO 53500 --- [timeoutChecker_1_1] i.s.c.rpc.netty.TmNettyRemotingClient    : register TM success. client version:1.5.2, server version:1.5.2,channel:[id: 0x1d3f057d, L:/192.168.150.1:57738 - R:/192.168.150.137:8099]
+15:23:02:306  INFO 53500 --- [timeoutChecker_1_1] i.s.core.rpc.netty.NettyPoolableFactory  : register success, cost 24 ms, version:1.5.2,role:TMROLE,channel:[id: 0x1d3f057d, L:/192.168.150.1:57738 - R:/192.168.150.137:8099]
+15:23:08:510  WARN 53500 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=45s244ms858µs400ns).
+15:24:08:613  WARN 53500 --- [Thread-5] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Start destroying Publisher
+15:24:08:614  WARN 53500 --- [Thread-1] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Start destroying common HttpClient
+15:24:08:614  WARN 53500 --- [Thread-5] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Destruction of the end
+15:24:08:614  WARN 53500 --- [Thread-1] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Destruction of the end
+15:24:10:398 ERROR 53500 --- [com.alibaba.nacos.client.naming.updater.4] com.alibaba.nacos.common.remote.client   : Send request fail, request = ServiceQueryRequest{headers={}, requestId='null'}, retryTimes = 0, errorMessage = java.util.concurrent.TimeoutException: Waited 3000 milliseconds (plus 14 milliseconds, 689500 nanoseconds delay) for com.alibaba.nacos.shaded.io.grpc.stub.ClientCalls$GrpcFuture@5469e0e0[status=PENDING, info=[GrpcFuture{clientCall={delegate={delegate=ClientCallImpl{method=MethodDescriptor{fullMethodName=Request/request, type=UNARY, idempotent=false, safe=false, sampledToLocalTracing=true, requestMarshaller=com.alibaba.nacos.shaded.io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@3f8ce839, responseMarshaller=com.alibaba.nacos.shaded.io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@35e5227f, schemaDescriptor=com.alibaba.nacos.api.grpc.auto.RequestGrpc$RequestMethodDescriptorSupplier@80f9586}}}}}]]
+15:24:11:539  INFO 53500 --- [com.alibaba.nacos.client.remote.worker] com.alibaba.nacos.common.remote.client   : [ca7d0f32-e589-4434-8d2b-7210ac9bd54f] Server check success, currentServer is 192.168.150.137:8848 
+15:24:11:541  INFO 53500 --- [SpringContextShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registering from Nacos Server now...
+15:24:11:569  INFO 53500 --- [SpringContextShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registration finished.
+15:24:11:895  INFO 53500 --- [SpringContextShutdownHook] com.alibaba.nacos.common.remote.client   : Shutdown rpc client, set status to shutdown
+15:24:11:896  INFO 53500 --- [SpringContextShutdownHook] com.alibaba.nacos.common.remote.client   : Shutdown client event executor java.util.concurrent.ScheduledThreadPoolExecutor@4f8b78cc[Running, pool size = 2, active threads = 2, queued tasks = 0, completed tasks = 0]
+15:24:11:896  INFO 53500 --- [SpringContextShutdownHook] com.alibaba.nacos.common.remote.client   : Close current connection 1726122416140_192.168.150.1_52921
+15:24:11:899  INFO 53500 --- [nacos-grpc-client-executor-692] c.a.n.c.remote.client.grpc.GrpcClient    : [1726122416140_192.168.150.1_52921]Ignore complete event,isRunning:false,isAbandon=false
+15:24:11:902  INFO 53500 --- [SpringContextShutdownHook] c.a.n.c.remote.client.grpc.GrpcClient    : Shutdown grpc executor java.util.concurrent.ThreadPoolExecutor@1b7f2123[Running, pool size = 5, active threads = 0, queued tasks = 0, completed tasks = 693]
+15:24:11:910  INFO 53500 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+15:24:11:956  INFO 53500 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+15:24:11:958  INFO 53500 --- [NettyClientSelector_TMROLE_1_1] i.s.c.r.n.AbstractNettyRemotingClient    : channel inactive: [id: 0x1d3f057d, L:/192.168.150.1:57738 ! R:/192.168.150.137:8099]
+15:24:11:958  INFO 53500 --- [NettyClientSelector_TMROLE_1_1] i.s.c.r.netty.NettyClientChannelManager  : return to pool, rm channel:[id: 0x1d3f057d, L:/192.168.150.1:57738 ! R:/192.168.150.137:8099]
+15:24:11:958  INFO 53500 --- [NettyClientSelector_TMROLE_1_1] i.s.core.rpc.netty.NettyPoolableFactory  : channel valid false,channel:[id: 0x1d3f057d, L:/192.168.150.1:57738 ! R:/192.168.150.137:8099]
+15:24:11:958  INFO 53500 --- [NettyClientSelector_TMROLE_1_1] i.s.core.rpc.netty.NettyPoolableFactory  : will destroy channel:[id: 0x1d3f057d, L:/192.168.150.1:57738 ! R:/192.168.150.137:8099]
+15:24:11:958  INFO 53500 --- [NettyClientSelector_TMROLE_1_1] i.s.c.r.n.AbstractNettyRemotingClient    : ChannelHandlerContext(AbstractNettyRemotingClient$ClientHandler#0, [id: 0x1d3f057d, L:/192.168.150.1:57738 ! R:/192.168.150.137:8099]) will closed
+15:24:11:958  INFO 53500 --- [NettyClientSelector_TMROLE_1_1] i.s.c.r.n.AbstractNettyRemotingClient    : ChannelHandlerContext(AbstractNettyRemotingClient$ClientHandler#0, [id: 0x1d3f057d, L:/192.168.150.1:57738 ! R:/192.168.150.137:8099]) will closed
+15:24:11:960  INFO 53500 --- [NettyClientSelector_RMROLE_1_1] i.s.c.r.n.AbstractNettyRemotingClient    : channel inactive: [id: 0xe705a02d, L:/192.168.150.1:57643 ! R:/192.168.150.137:8099]
+15:24:11:961  INFO 53500 --- [NettyClientSelector_RMROLE_1_1] i.s.c.r.netty.NettyClientChannelManager  : return to pool, rm channel:[id: 0xe705a02d, L:/192.168.150.1:57643 ! R:/192.168.150.137:8099]
+15:24:11:961  INFO 53500 --- [NettyClientSelector_RMROLE_1_1] i.s.core.rpc.netty.NettyPoolableFactory  : channel valid false,channel:[id: 0xe705a02d, L:/192.168.150.1:57643 ! R:/192.168.150.137:8099]
+15:24:11:961  INFO 53500 --- [NettyClientSelector_RMROLE_1_1] i.s.core.rpc.netty.NettyPoolableFactory  : will destroy channel:[id: 0xe705a02d, L:/192.168.150.1:57643 ! R:/192.168.150.137:8099]
+15:24:11:961  INFO 53500 --- [NettyClientSelector_RMROLE_1_1] i.s.c.r.n.AbstractNettyRemotingClient    : ChannelHandlerContext(AbstractNettyRemotingClient$ClientHandler#0, [id: 0xe705a02d, L:/192.168.150.1:57643 ! R:/192.168.150.137:8099]) will closed
+15:24:11:961  INFO 53500 --- [NettyClientSelector_RMROLE_1_1] i.s.c.r.n.AbstractNettyRemotingClient    : ChannelHandlerContext(AbstractNettyRemotingClient$ClientHandler#0, [id: 0xe705a02d, L:/192.168.150.1:57643 ! R:/192.168.150.137:8099]) will closed
